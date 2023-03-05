@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,10 @@ public class GameManager : MonoBehaviour
     public int h;
     public int scale;
     public static Dictionary<Vector2, Cell> _tiles = new Dictionary<Vector2, Cell>();
+    public List<Horizontal> h_Blocks = new List<Horizontal>();
+    public List<Vertical> v_Blocks = new List<Vertical>();
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +32,17 @@ public class GameManager : MonoBehaviour
                 _tiles[new Vector2(i, j)] = cell_temp;
             }
         }
+
+        foreach (var h_b in h_Blocks)
+        {
+            h_b.Init();
+        }
+
+        foreach (var v_b in v_Blocks)
+        {
+            v_b.Init();
+        }
+        
     }
 
     // Update is called once per frame

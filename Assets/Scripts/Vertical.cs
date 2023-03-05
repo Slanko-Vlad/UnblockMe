@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Vertical : MonoBehaviour
@@ -8,8 +9,12 @@ public class Vertical : MonoBehaviour
     
     public int length;
     private Transform trans;
-    private Vector2[] vectArr;
+    private Vector2Int[] vectArr;
     public Vector2Int startPos;
+
+    //Moving Logic
+    public LayerMask rayLayerMask;
+    private Vector2Int? startCell = null;
     private void Move(int x, int y)
     {
         foreach (var cord in vectArr)
@@ -17,13 +22,13 @@ public class Vertical : MonoBehaviour
             GameManager._tiles[cord].IsFree = true;
         }
         
-        trans.position = new Vector2(0.5f + x, (this.length * 0.5f) + y );
-        vectArr[0] = new Vector2(x, y);
+        trans.position = new Vector3(0.5f + x, (this.length * 0.5f) + y, -1);
+        vectArr[0] = new Vector2Int(x, y);
         if (length > 1)
         {
             for (int i = 1; i < length; i++)
             {
-                vectArr[i] = new Vector2(x, y + i);
+                vectArr[i] = new Vector2Int(x, y + i);
             }
         }
 
@@ -34,14 +39,43 @@ public class Vertical : MonoBehaviour
         
         
     }
+    
+    private void OnMouseDrag()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero ,20, rayLayerMask.value);
+        if (hit && startCell == null)
+        {
+            Cell targetCell = hit.transform.GetComponent<Cell>();
+            startCell = new Vector2Int(targetCell.X, targetCell.Y);
+        }
+        else if (hit)
+        {
+            Cell targetCell = hit.transform.GetComponent<Cell>();
+            if (targetCell.Y != startCell.Value.y)
+            {
+                Move(vectArr[0].x, vectArr[0].y + (targetCell.Y - startCell.Value.y));
+                startCell = new Vector2Int(targetCell.X, targetCell.Y);
+            }
+        }
+    }
+
+    private void OnMouseUp()
+    {
+        startCell = null;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         trans = gameObject.transform;
         trans.localScale = new Vector2(1, length);
+
         
-        vectArr = new Vector2[length];
-        
+    }
+
+    public void Init()
+    {
+        vectArr = new Vector2Int[length];
         this.Move(startPos.x, startPos.y);
     }
 

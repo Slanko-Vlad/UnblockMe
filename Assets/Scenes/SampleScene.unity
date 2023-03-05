@@ -153,6 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cell: {fileID: -5675908539756470610, guid: 6654edfcd7a754178a498ad8a8a6c4e7, type: 3}
+  w: 0
+  h: 0
   scale: 1
 --- !u!4 &339032925
 Transform:

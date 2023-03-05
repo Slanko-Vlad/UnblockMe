@@ -43,6 +43,8 @@
   <ItemGroup>
      <Compile Include="Assets/Scripts/Horizontal.cs" />
      <Compile Include="Assets/Scripts/Vertical.cs" />
+     <Compile Include="Assets/Scripts/Cell.cs" />
+     <Compile Include="Assets/Scripts/GameManager.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets/Scripts" />
      <Folder Include="Assets/Scenes" />

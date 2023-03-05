@@ -33,16 +33,6 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        foreach (var h_b in h_Blocks)
-        {
-            h_b.Init();
-        }
-
-        foreach (var v_b in v_Blocks)
-        {
-            v_b.Init();
-        }
-        
     }
 
     // Update is called once per frame

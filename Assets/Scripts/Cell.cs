@@ -8,23 +8,9 @@ public class Cell : MonoBehaviour
     private int x;
     private int y;
 
-    public int X
-    {
-        get => x;
-        set => x = value;
-    }
-    
-    public int Y
-    {
-        get => y;
-        set => y = value;
-    }
-    
-    public bool IsFree
-    {
-        get => isFree;
-        set => isFree = value;
-    }
+    public bool IsFree { get => isFree; set => isFree = value; }
+    public int X { get => x; set => x = value; }
+    public int Y { get => y; set => y = value; }
     
     [SerializeField] private Color _baseColor, _offsetColor;
     [SerializeField] private SpriteRenderer _renderer;
@@ -32,4 +18,5 @@ public class Cell : MonoBehaviour
     public void Init(bool isOffset) {
         _renderer.color = isOffset ? _offsetColor : _baseColor;
     }
+
 }

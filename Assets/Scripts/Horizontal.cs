@@ -71,6 +71,7 @@ public class Horizontal : MonoBehaviour
     {
         trans = gameObject.transform;
         trans.localScale = new Vector2(length, 1);
+        Init();
 
     }
     

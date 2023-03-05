@@ -9,7 +9,9 @@ public class GameManager : MonoBehaviour
     public int w;
     public int h;
     public int scale;
-    public static Dictionary<Vector2Int, Cell> _tiles = new Dictionary<Vector2Int, Cell>();
+    public static Dictionary<Vector2, Cell> _tiles = new Dictionary<Vector2, Cell>();
+    public List<Horizontal> h_Blocks = new List<Horizontal>();
+    public List<Vertical> v_Blocks = new List<Vertical>();
 
 
     // Start is called before the first frame update
@@ -27,7 +29,7 @@ public class GameManager : MonoBehaviour
                 
                 var isOffset = (i % 2 == 0 && j % 2 != 0) || (i % 2 != 0 && j % 2 == 0);
                 cell_temp.Init(isOffset);
-                _tiles[new Vector2Int(i, j)] = cell_temp;
+                _tiles[new Vector2(i, j)] = cell_temp;
             }
         }
 

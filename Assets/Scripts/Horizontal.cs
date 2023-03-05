@@ -19,14 +19,6 @@ public class Horizontal : MonoBehaviour
     
     private void Move(int x, int y)
     {
-        // if (!GameManager._tiles[new Vector2Int(x + length, y)] || x + length > GameManager.w)
-        // {
-        //     return;
-        // }
-        // if (!GameManager._tiles[new Vector2Int(x - 1, y)] || x - 1 < 0)
-        // {
-        //     return;
-        // }
         foreach (var cord in vectArr)
         {
             GameManager._tiles[cord].IsFree = true;

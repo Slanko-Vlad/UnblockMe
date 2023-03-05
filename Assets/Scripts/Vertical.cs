@@ -6,6 +6,8 @@ public class Vertical : MonoBehaviour
 {
     public int length;
     private Transform trans;
+
+    private float? oldMousePos;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,9 +21,23 @@ public class Vertical : MonoBehaviour
         
     }
 
+    private void OnMouseUp()
+    {
+        oldMousePos = null;
+    }
+
     private void OnMouseDrag()
     {
-        Vector3 mp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        trans.position = new Vector2(trans.position.x, mp.y);
+        float mp = Camera.main.ScreenToWorldPoint(Input.mousePosition).y;
+        float? move_y = null;
+        if (oldMousePos == null)
+            oldMousePos = mp;
+        else if (oldMousePos != mp)
+            move_y =  mp - oldMousePos;
+        if (oldMousePos == mp)
+            move_y = null;
+        if (move_y != null)
+            trans.position = new Vector2(trans.position.x, trans.position.y + (float)move_y);
+        oldMousePos = mp;
     }
 }

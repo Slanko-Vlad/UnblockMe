@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -5,6 +6,7 @@ using UnityEngine;
 
 public class Vertical : MonoBehaviour
 {
+    
     public int length;
     private Transform trans;
     private Vector2Int[] vectArr;
@@ -61,14 +63,12 @@ public class Vertical : MonoBehaviour
     {
         startCell = null;
     }
-    
+
     // Start is called before the first frame update
     void Start()
     {
         trans = gameObject.transform;
         trans.localScale = new Vector2(1, length);
-        Init();
-
 
         
     }
@@ -84,5 +84,4 @@ public class Vertical : MonoBehaviour
     {
         
     }
-
 }

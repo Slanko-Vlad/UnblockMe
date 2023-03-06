@@ -13,8 +13,7 @@ public class Player : MonoBehaviour
     public LayerMask rayLayerMask;
     private Vector2Int? startCell = null;
     
-   
-   
+    
     private void Move(int x, int y)
     {
         if (x + length - 1 >= GameManager.w || x < 0)

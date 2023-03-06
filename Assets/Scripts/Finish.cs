@@ -2,10 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Finish : MonoBehaviour
 {
-   // \o/ 
     void Start()
     {
         
@@ -16,7 +16,7 @@ public class Finish : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider collider)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.tag == "Player")
         {
@@ -26,6 +26,8 @@ public class Finish : MonoBehaviour
 
     private void CompleteLevel()
     {
-        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+    
+    
 }

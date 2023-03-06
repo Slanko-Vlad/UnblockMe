@@ -28,53 +28,61 @@ extern void Cell_set_IsFree_m24C8E14559A4699A003B7D1810DA0DB7BBD01950 (void);
 extern void Cell_Init_mAD5F0047C83456F23BD5CA5C6D82A1D89D15D4A6 (void);
 // 0x00000008 System.Void Cell::.ctor()
 extern void Cell__ctor_m46B529AC926B052FF62C750561098BAB4321350F (void);
-// 0x00000009 System.Void GameManager::Start()
+// 0x00000009 System.Void Finish::Start()
+extern void Finish_Start_mA9AFFF54C6C4074C51DB4A9C91DE3F7F91C48433 (void);
+// 0x0000000A System.Void Finish::Update()
+extern void Finish_Update_mA20F0AEE974BDBCB160749D13732B57E89AC555C (void);
+// 0x0000000B System.Void Finish::OnTriggerEnter2D(UnityEngine.Collider2D)
+extern void Finish_OnTriggerEnter2D_mAF84A22C805B5AAEB35D9EC57EA28D44CA8226C8 (void);
+// 0x0000000C System.Void Finish::CompleteLevel()
+extern void Finish_CompleteLevel_m885320627617C80B183BE415E1E5D7CE79E61533 (void);
+// 0x0000000D System.Void Finish::.ctor()
+extern void Finish__ctor_m1C22870293D937B3091D24E0C0EB27B7DF08B48B (void);
+// 0x0000000E System.Void GameManager::Start()
 extern void GameManager_Start_m87A71D65F3171A58DBDDBFB03832ADA65643D0E2 (void);
-// 0x0000000A System.Void GameManager::Update()
+// 0x0000000F System.Void GameManager::Update()
 extern void GameManager_Update_m7F29D8E933B8D21D2E67507979C0F12ACF87BB41 (void);
-// 0x0000000B System.Void GameManager::.ctor()
+// 0x00000010 System.Void GameManager::.ctor()
 extern void GameManager__ctor_mF453CED520617BFB65C52405A964E06CF17DB368 (void);
-// 0x0000000C System.Void GameManager::.cctor()
+// 0x00000011 System.Void GameManager::.cctor()
 extern void GameManager__cctor_m41B7309DC74C0AE67762C267F934CE6F9920C7D4 (void);
-// 0x0000000D System.Void Horizontal::Move(System.Int32,System.Int32)
+// 0x00000012 System.Void Horizontal::Move(System.Int32,System.Int32)
 extern void Horizontal_Move_m7CED4AA63CEBC42495F5A7FE918302DBE11DBA47 (void);
-// 0x0000000E System.Void Horizontal::OnMouseDrag()
+// 0x00000013 System.Void Horizontal::OnMouseDrag()
 extern void Horizontal_OnMouseDrag_m41594C9D76298F47A20A3EA752CF03CE8E0D8A36 (void);
-// 0x0000000F System.Void Horizontal::OnMouseUp()
+// 0x00000014 System.Void Horizontal::OnMouseUp()
 extern void Horizontal_OnMouseUp_m5774E959C50D6C580A4B61AD987A522C8C888A52 (void);
-// 0x00000010 System.Void Horizontal::Start()
+// 0x00000015 System.Void Horizontal::Start()
 extern void Horizontal_Start_m744E35DE406E82DE12F5266FE3D604FD3B1178F9 (void);
-// 0x00000011 System.Void Horizontal::Init()
-extern void Horizontal_Init_mD84A801E383E64B88FE2FBF9111DC47DD63E9790 (void);
-// 0x00000012 System.Void Horizontal::.ctor()
+// 0x00000016 System.Void Horizontal::.ctor()
 extern void Horizontal__ctor_mE574C2104ABE8455AA2C113C644E1DB396A39C77 (void);
-// 0x00000013 System.Void Player::Move(System.Int32,System.Int32)
+// 0x00000017 System.Void Player::Move(System.Int32,System.Int32)
 extern void Player_Move_mAE5A6AADB48410424BC9624AC64D2A121490E8DA (void);
-// 0x00000014 System.Void Player::OnMouseDrag()
+// 0x00000018 System.Void Player::OnMouseDrag()
 extern void Player_OnMouseDrag_mF6EB2FC8922EE8FD5CCC70D0A881E2B759D7C7B2 (void);
-// 0x00000015 System.Void Player::OnMouseUp()
+// 0x00000019 System.Void Player::OnMouseUp()
 extern void Player_OnMouseUp_m16050445D2A693D7472A4CE7F59246F221DA72D4 (void);
-// 0x00000016 System.Void Player::Start()
+// 0x0000001A System.Void Player::Start()
 extern void Player_Start_mC31CF4F40DDEA35C5E39E8C43EC37284AE7C453D (void);
-// 0x00000017 System.Void Player::Init()
-extern void Player_Init_m114DA93C62FC549B09D43810BCB46BAA4D2C3604 (void);
-// 0x00000018 System.Void Player::.ctor()
+// 0x0000001B System.Void Player::.ctor()
 extern void Player__ctor_m0A83E0706592FC871B0CF188B37AFC6649F3D85D (void);
-// 0x00000019 System.Void Vertical::Move(System.Int32,System.Int32)
+// 0x0000001C System.Void StartMenu::StartGame()
+extern void StartMenu_StartGame_m322304C7FCCF49E44379A0586A424E138823FB86 (void);
+// 0x0000001D System.Void StartMenu::.ctor()
+extern void StartMenu__ctor_mF4B8FB56F43BCB65755F6B81F1C9446FEE79C577 (void);
+// 0x0000001E System.Void Vertical::Move(System.Int32,System.Int32)
 extern void Vertical_Move_m09EF2AE282D5CC44FA6106163F0681C52A147C39 (void);
-// 0x0000001A System.Void Vertical::OnMouseDrag()
+// 0x0000001F System.Void Vertical::OnMouseDrag()
 extern void Vertical_OnMouseDrag_m5D2C42807BFDF22A5631AFF92428D04FC7F5BC2D (void);
-// 0x0000001B System.Void Vertical::OnMouseUp()
+// 0x00000020 System.Void Vertical::OnMouseUp()
 extern void Vertical_OnMouseUp_m28338CB71CCCFD3093DF9807BCE64C4BA24C85A9 (void);
-// 0x0000001C System.Void Vertical::Start()
+// 0x00000021 System.Void Vertical::Start()
 extern void Vertical_Start_mD38C09C52BF4C0915DA3A6C7755B0E170B6128A8 (void);
-// 0x0000001D System.Void Vertical::Init()
-extern void Vertical_Init_m98A8F3F71A3D5334C2771AAD8B4D2D3AC235E89B (void);
-// 0x0000001E System.Void Vertical::Update()
+// 0x00000022 System.Void Vertical::Update()
 extern void Vertical_Update_m7AD7D242E0BF3C16201503EF115C78A3056254D2 (void);
-// 0x0000001F System.Void Vertical::.ctor()
+// 0x00000023 System.Void Vertical::.ctor()
 extern void Vertical__ctor_m98B5D5D8EC9EB417293F44E806F095B469FE9521 (void);
-static Il2CppMethodPointer s_methodPointers[31] = 
+static Il2CppMethodPointer s_methodPointers[35] = 
 {
 	Cell_get_X_m5A30322640999E3B981D6697CF3A6D77F48CABBA,
 	Cell_set_X_m1799C09206C5628BA7E81CE1B4C24A87D2137B9E,
@@ -84,6 +92,11 @@ static Il2CppMethodPointer s_methodPointers[31] =
 	Cell_set_IsFree_m24C8E14559A4699A003B7D1810DA0DB7BBD01950,
 	Cell_Init_mAD5F0047C83456F23BD5CA5C6D82A1D89D15D4A6,
 	Cell__ctor_m46B529AC926B052FF62C750561098BAB4321350F,
+	Finish_Start_mA9AFFF54C6C4074C51DB4A9C91DE3F7F91C48433,
+	Finish_Update_mA20F0AEE974BDBCB160749D13732B57E89AC555C,
+	Finish_OnTriggerEnter2D_mAF84A22C805B5AAEB35D9EC57EA28D44CA8226C8,
+	Finish_CompleteLevel_m885320627617C80B183BE415E1E5D7CE79E61533,
+	Finish__ctor_m1C22870293D937B3091D24E0C0EB27B7DF08B48B,
 	GameManager_Start_m87A71D65F3171A58DBDDBFB03832ADA65643D0E2,
 	GameManager_Update_m7F29D8E933B8D21D2E67507979C0F12ACF87BB41,
 	GameManager__ctor_mF453CED520617BFB65C52405A964E06CF17DB368,
@@ -92,61 +105,64 @@ static Il2CppMethodPointer s_methodPointers[31] =
 	Horizontal_OnMouseDrag_m41594C9D76298F47A20A3EA752CF03CE8E0D8A36,
 	Horizontal_OnMouseUp_m5774E959C50D6C580A4B61AD987A522C8C888A52,
 	Horizontal_Start_m744E35DE406E82DE12F5266FE3D604FD3B1178F9,
-	Horizontal_Init_mD84A801E383E64B88FE2FBF9111DC47DD63E9790,
 	Horizontal__ctor_mE574C2104ABE8455AA2C113C644E1DB396A39C77,
 	Player_Move_mAE5A6AADB48410424BC9624AC64D2A121490E8DA,
 	Player_OnMouseDrag_mF6EB2FC8922EE8FD5CCC70D0A881E2B759D7C7B2,
 	Player_OnMouseUp_m16050445D2A693D7472A4CE7F59246F221DA72D4,
 	Player_Start_mC31CF4F40DDEA35C5E39E8C43EC37284AE7C453D,
-	Player_Init_m114DA93C62FC549B09D43810BCB46BAA4D2C3604,
 	Player__ctor_m0A83E0706592FC871B0CF188B37AFC6649F3D85D,
+	StartMenu_StartGame_m322304C7FCCF49E44379A0586A424E138823FB86,
+	StartMenu__ctor_mF4B8FB56F43BCB65755F6B81F1C9446FEE79C577,
 	Vertical_Move_m09EF2AE282D5CC44FA6106163F0681C52A147C39,
 	Vertical_OnMouseDrag_m5D2C42807BFDF22A5631AFF92428D04FC7F5BC2D,
 	Vertical_OnMouseUp_m28338CB71CCCFD3093DF9807BCE64C4BA24C85A9,
 	Vertical_Start_mD38C09C52BF4C0915DA3A6C7755B0E170B6128A8,
-	Vertical_Init_m98A8F3F71A3D5334C2771AAD8B4D2D3AC235E89B,
 	Vertical_Update_m7AD7D242E0BF3C16201503EF115C78A3056254D2,
 	Vertical__ctor_m98B5D5D8EC9EB417293F44E806F095B469FE9521,
 };
-static const int32_t s_InvokerIndices[31] = 
+static const int32_t s_InvokerIndices[35] = 
 {
-	1044,
-	913,
-	1044,
-	913,
-	1028,
-	894,
-	894,
-	1079,
-	1079,
-	1079,
-	1079,
-	2079,
-	508,
-	1079,
-	1079,
-	1079,
-	1079,
-	1079,
-	508,
-	1079,
-	1079,
-	1079,
-	1079,
-	1079,
-	508,
-	1079,
-	1079,
-	1079,
-	1079,
-	1079,
-	1079,
+	3169,
+	2650,
+	3169,
+	2650,
+	3130,
+	2609,
+	2609,
+	3269,
+	3269,
+	3269,
+	2666,
+	3269,
+	3269,
+	3269,
+	3269,
+	3269,
+	5024,
+	1361,
+	3269,
+	3269,
+	3269,
+	3269,
+	1361,
+	3269,
+	3269,
+	3269,
+	3269,
+	3269,
+	3269,
+	1361,
+	3269,
+	3269,
+	3269,
+	3269,
+	3269,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	31,
+	35,
 	s_methodPointers,
 	0,
 	NULL,

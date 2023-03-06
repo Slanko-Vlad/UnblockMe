@@ -47,6 +47,7 @@
      <Compile Include="Assets/Scripts/GameManager.cs" />
      <Compile Include="Assets/Scripts/Cell.cs" />
      <Compile Include="Assets/Scripts/Finish.cs" />
+     <Compile Include="Assets/Scripts/StartMenu.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets/Scripts" />
      <Folder Include="Assets/Scenes" />

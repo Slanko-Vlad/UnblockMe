@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
         {
             for (int j = 0; j < h; j++)
             {
+                //Cell genegation
                 var cell_temp = Instantiate(cell, new Vector3((i + 0.5f) * scale, (j + 0.5f) * scale), Quaternion.identity);
                 cell_temp.transform.localScale = new Vector3(1 * scale, 1 * scale, 0);
                 cell_temp.name = $"Cell [{i},{j}]";

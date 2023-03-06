@@ -15,13 +15,15 @@ public class Vertical : MonoBehaviour
     //Moving Logic
     public LayerMask rayLayerMask;
     private Vector2Int? startCell = null;
+    
     private void Move(int x, int y)
     {
+        //Border check
         if (y + length - 1 >= GameManager.h || y < 0)
         {
             return;
         }
-
+        //IsFree check
         if (!GameManager._tiles[new Vector2Int(x, y + length - 1)].IsFree && startCell.Value.y <= y)
         {
              return;
@@ -32,6 +34,7 @@ public class Vertical : MonoBehaviour
             return;
         }
         
+        //Cell liberation
         foreach (var cord in vectArr)
         {
             GameManager._tiles[cord].IsFree = true;
@@ -46,23 +49,25 @@ public class Vertical : MonoBehaviour
                 vectArr[i] = new Vector2Int(x, y + i);
             }
         }
-
+        //Cell ocupation
         foreach (var cord in vectArr)
         {
             GameManager._tiles[cord].IsFree = false;
         }
         
     }
-    
+    //Raycasting
     private void OnMouseDrag()
     {
         
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero ,20, rayLayerMask.value);
+        //Strart cell detected
         if (hit && startCell == null)
         {
             Cell targetCell = hit.transform.GetComponent<Cell>();
             startCell = new Vector2Int(targetCell.X, targetCell.Y);
         }
+        //Next cell detected
         else if (hit)
         {
             Cell targetCell = hit.transform.GetComponent<Cell>();
@@ -73,7 +78,7 @@ public class Vertical : MonoBehaviour
             }
         }
     }
-
+// End of raycasting
     private void OnMouseUp()
     {
         startCell = null;
@@ -84,15 +89,11 @@ public class Vertical : MonoBehaviour
     {
         trans = gameObject.transform;
         trans.localScale = new Vector2(1, length);
-        Init();
-
-    }
-
-    public void Init()
-    {
         vectArr = new Vector2Int[length];
-        this.Move(startPos.x, startPos.y);
+        Move(startPos.x, startPos.y);
     }
+
+    
 
     // Update is called once per frame
     void Update()

@@ -70,29 +70,8 @@ public class Horizontal : MonoBehaviour
             Cell targetCell = hit.transform.GetComponent<Cell>();
             if (targetCell.X != startCell.Value.x)
             {
-                // if (vectArr[length - 1].x + 1 > GameManager.w - 1 && startCell.Value.x < targetCell.X)
-                // {
-                //     
-                // }
-                // else if (vectArr[0].x - 1 < 0 && startCell.Value.x >= targetCell.X)
-                // {
-                //     
-                // }
-                // else if (!GameManager._tiles[new Vector2Int(targetCell.X + length - 1, startCell.Value.y)].IsFree && startCell.Value.x < targetCell.X)
-                // {
-                //     
-                // }
-                //
-                // else if (!GameManager._tiles[new Vector2Int(vectArr[0].x - 1, vectArr[0].y)].IsFree && startCell.Value.x >= targetCell.X)
-                // {
-                //     
-                // }
-                // else
-                // {
-                    Move(vectArr[0].x + (targetCell.X - startCell.Value.x), vectArr[0].y);
-                    startCell = new Vector2Int(targetCell.X, targetCell.Y);
-                //}
-                
+                Move(vectArr[0].x + (targetCell.X - startCell.Value.x), vectArr[0].y);
+                startCell = new Vector2Int(targetCell.X, targetCell.Y);
             }
         }
     }
@@ -106,12 +85,7 @@ public class Horizontal : MonoBehaviour
     {
         trans = gameObject.transform;
         trans.localScale = new Vector2(length, 1);
-        Init();
-    }
-    
-    public void Init()
-    {
         vectArr = new Vector2Int[length];
-        this.Move(startPos.x, startPos.y);
+        Move(startPos.x, startPos.y);
     }
 }

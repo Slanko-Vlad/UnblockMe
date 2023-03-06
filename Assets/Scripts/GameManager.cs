@@ -6,8 +6,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public Cell cell;
-    public static int w = 7;
-    public static int h = 5;
+    public static int w = 6;
+    public static int h = 6;
     public int scale;
     public static Dictionary<Vector2Int, Cell> _tiles = new Dictionary<Vector2Int, Cell>();
 

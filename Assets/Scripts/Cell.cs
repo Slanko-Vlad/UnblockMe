@@ -4,28 +4,12 @@ using UnityEngine;
 
 public class Cell : MonoBehaviour
 {
-    private bool isFree = true;
-    private int x;
-    private int y;
+    public int X { get; set; }
 
-    public int X
-    {
-        get => x;
-        set => x = value;
-    }
-    
-    public int Y
-    {
-        get => y;
-        set => y = value;
-    }
-    
-    public bool IsFree
-    {
-        get => isFree;
-        set => isFree = value;
-    }
-    
+    public int Y { get; set; }
+
+    public bool IsFree { get; set; } = true;
+
     [SerializeField] private Color _baseColor, _offsetColor;
     [SerializeField] private SpriteRenderer _renderer;
 

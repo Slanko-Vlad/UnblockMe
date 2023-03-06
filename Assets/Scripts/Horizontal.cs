@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Horizontal : MonoBehaviour
+public class Horizontal : MonoBehaviour 
 {
     
     public int length;
@@ -17,8 +17,23 @@ public class Horizontal : MonoBehaviour
     public LayerMask rayLayerMask;
     private Vector2Int? startCell = null;
     
+   
+   
     private void Move(int x, int y)
     {
+        if (x + length - 1 >= GameManager.w || x < 0)
+        {
+            return;
+        }
+        if (!GameManager._tiles[new Vector2Int(x + length - 1, y)].IsFree && startCell.Value.x <= x)
+        {
+            return;
+        }
+
+        if (!GameManager._tiles[new Vector2Int(x, y)].IsFree && startCell.Value.x > x)
+        {
+            return;
+        }
         foreach (var cord in vectArr)
         {
             GameManager._tiles[cord].IsFree = true;
@@ -45,7 +60,6 @@ public class Horizontal : MonoBehaviour
     {
         //Debug.DrawRay(Camera.main.gameObject.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition), Color.red, 1);
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero ,20, rayLayerMask.value);
-        Debug.Log(hit.transform.name);
         if (hit && startCell == null)
         {
             Cell targetCell = hit.transform.GetComponent<Cell>();
@@ -56,8 +70,29 @@ public class Horizontal : MonoBehaviour
             Cell targetCell = hit.transform.GetComponent<Cell>();
             if (targetCell.X != startCell.Value.x)
             {
-                Move(vectArr[0].x + (targetCell.X - startCell.Value.x), vectArr[0].y);
-                startCell = new Vector2Int(targetCell.X, targetCell.Y);
+                // if (vectArr[length - 1].x + 1 > GameManager.w - 1 && startCell.Value.x < targetCell.X)
+                // {
+                //     
+                // }
+                // else if (vectArr[0].x - 1 < 0 && startCell.Value.x >= targetCell.X)
+                // {
+                //     
+                // }
+                // else if (!GameManager._tiles[new Vector2Int(targetCell.X + length - 1, startCell.Value.y)].IsFree && startCell.Value.x < targetCell.X)
+                // {
+                //     
+                // }
+                //
+                // else if (!GameManager._tiles[new Vector2Int(vectArr[0].x - 1, vectArr[0].y)].IsFree && startCell.Value.x >= targetCell.X)
+                // {
+                //     
+                // }
+                // else
+                // {
+                    Move(vectArr[0].x + (targetCell.X - startCell.Value.x), vectArr[0].y);
+                    startCell = new Vector2Int(targetCell.X, targetCell.Y);
+                //}
+                
             }
         }
     }
@@ -71,7 +106,7 @@ public class Horizontal : MonoBehaviour
     {
         trans = gameObject.transform;
         trans.localScale = new Vector2(length, 1);
-
+        Init();
     }
     
     public void Init()

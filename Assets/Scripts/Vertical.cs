@@ -17,6 +17,21 @@ public class Vertical : MonoBehaviour
     private Vector2Int? startCell = null;
     private void Move(int x, int y)
     {
+        if (y + length - 1 >= GameManager.h || y < 0)
+        {
+            return;
+        }
+
+        if (!GameManager._tiles[new Vector2Int(x, y + length - 1)].IsFree && startCell.Value.y <= y)
+        {
+             return;
+        }
+
+        if (!GameManager._tiles[new Vector2Int(x, y)].IsFree && startCell.Value.y > y)
+        {
+            return;
+        }
+        
         foreach (var cord in vectArr)
         {
             GameManager._tiles[cord].IsFree = true;
@@ -37,11 +52,11 @@ public class Vertical : MonoBehaviour
             GameManager._tiles[cord].IsFree = false;
         }
         
-        
     }
     
     private void OnMouseDrag()
     {
+        
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero ,20, rayLayerMask.value);
         if (hit && startCell == null)
         {
@@ -69,8 +84,8 @@ public class Vertical : MonoBehaviour
     {
         trans = gameObject.transform;
         trans.localScale = new Vector2(1, length);
+        Init();
 
-        
     }
 
     public void Init()
